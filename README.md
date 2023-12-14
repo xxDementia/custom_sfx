@@ -13,7 +13,7 @@ you are free to use this for your mods :) credit not required
 * in sfxmap_custom:
     * change the src to the url where your audio hosted
 
-        **(<>) - ALERT::'CORS';'cross-origin resource sharing'**
+        **(⟡) - ALERT::'CORS';'cross-origin resource sharing'**
 
     * add sound sprites, formatted like so:
     
@@ -24,7 +24,7 @@ you are free to use this for your mods :) credit not required
     
             case "SFXNAME": sfx = \`SFXNAME${rand(1, #)}`; break
 
-        **(<>) - NOTE::'function rand()';'first inclusive';'last exclusive';'number of different sounds plus one'**
+        **(⟡) - NOTE::'function rand()';'first inclusive';'last exclusive';'number of different sounds plus one'**
 
 
 aaaand that should be it!! you should be able to just type in the name of your desired sound effect in places where it is needed and it will just work! thanks for checkin this out
