@@ -1,11 +1,11 @@
 //custom SFX map
 var sfxmap_custom = new Howl({
-    src: ['source goes here'],
+    src: ['source goes here'], // URL goes here, ex: ['https://file.garden']
     preload: true,
     html5: false,
-    volume: 1,
+    volume: 0.75,
     sprite: {
-        example1: [0, 1000],
+        example1: [0, 1000], // NAME: [START MS, DURATION MS]
         example2: [1000, 1000],
         example3: [2000, 1000],
         __default: [0, 1]
@@ -36,9 +36,12 @@ function play(sfxName, pitch = true, volume = 0.75, forcePlay) {
         case "talkfairy": sfx = `talkfairy${rand(1, 9)}`; break
         //shot also has a variety
         case "shot": sfx = `shot${rand(1, 7)}`; break
+
+        // case "[NAME]": sfx = `[NAME]${rand(1, #)}`; break
+        // (<>) - NOTE::'rand(1,#)';'inclusive exclusive';'number of different sounds plus one'
     }
 
-    
+
     //custom sfx check
     let sourceSFXmap = sfxmap
 
