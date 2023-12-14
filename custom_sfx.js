@@ -16,26 +16,9 @@ function play(sfxName, pitch = true, volume = 0.75, forcePlay) {
     if(forcePlay) env.recentSfx = false    
     if(env.recentSfx) return
     env.recentSfx = true
-
-    
-    //custom sfx check
-    let sourceSFXmap = sfxmap
-
-    if(!sfxmap.contains(sfxName))
-        sourceSFXmap = sfxmap_custom
-
     
     //we may change this depending on the SFX played
     var sfx = sfxName
-    
-    //randomize the pitch slightly by default
-    if(pitch === true) {
-        sourceSFXmap.rate((Math.random() * 0.2) + 0.9) 
-    } else if(typeof pitch == "number") { //set the pitch if specified
-        sourceSFXmap.rate(pitch)
-    } else { //otherwise false
-        sourceSFXmap.rate(1)
-    }
 
     //if this uses a talk sound, we randomly select one of eight
     switch(sfxName) {
@@ -53,6 +36,23 @@ function play(sfxName, pitch = true, volume = 0.75, forcePlay) {
         case "talkfairy": sfx = `talkfairy${rand(1, 9)}`; break
         //shot also has a variety
         case "shot": sfx = `shot${rand(1, 7)}`; break
+    }
+
+    
+    //custom sfx check
+    let sourceSFXmap = sfxmap
+
+    if(!sfxmap._sprite[sfxName])
+        sourceSFXmap = sfxmap_custom
+
+
+    //randomize the pitch slightly by default
+    if(pitch === true) {
+        sourceSFXmap.rate((Math.random() * 0.2) + 0.9) 
+    } else if(typeof pitch == "number") { //set the pitch if specified
+        sourceSFXmap.rate(pitch)
+    } else { //otherwise false
+        sourceSFXmap.rate(1)
     }
 
     //duck the BGM briefly so the SFX doesn't layer with it too hard
