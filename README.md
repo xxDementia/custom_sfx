@@ -22,7 +22,7 @@ you are free to use this for your mods :) credit not required
 * if you have more than one sound effect for one sound (talksound, multi-sfx):
     * in the switch in play(), add a new case formatted like so: 
     
-            case "SFXNAME": sfx = \`SFXNAME${rand(1, #)}`; break
+            case "SFXNAME": sfx = `SFXNAME${rand(1, #)}`; break
 
         **(⟡) - NOTE::'function rand()';'first inclusive';'last exclusive';'number of different sounds plus one'**
 
