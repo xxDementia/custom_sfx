@@ -45,7 +45,7 @@ function play(sfxName, pitch = true, volume = 0.75, forcePlay) {
     //custom sfx check
     let sourceSFXmap = sfxmap
 
-    if(!sfxmap._sprite[sfxName])
+    if(!sfxmap._sprite[sfx])
         sourceSFXmap = sfxmap_custom
 
 
